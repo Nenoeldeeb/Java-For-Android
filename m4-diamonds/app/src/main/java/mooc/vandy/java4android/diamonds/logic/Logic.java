@@ -44,21 +44,18 @@ public class Logic
      * on-screen button labeled 'Process...' is pressed.
      */
     public void process(int size) {
+        horizontalFrames (size);
         topDiamondDrawer(size);
         middleDiamondDrawer(size);
         bottomDiamondDrawer(size);
+        horizontalFrames (size);
 
         
     }
 
 
     private void topDiamondDrawer(int size) {
-        // Draw the top frame.
-        mOut.print("+");
-        for (int i = 1; i <= size * 2; i++) {
-            mOut.print("-");
-        }
-        mOut.print("+\n");
+        mOut.print("\n");
         // Draw the top half of the diamond.
         for (int i = 1; i <= size-1; i++) {
             // Draw the right side of the frame.
@@ -129,7 +126,10 @@ public class Logic
             // Draw the left side of the frame.
             mOut.print("|\n");
         }
-        // Draw the bottom frame.
+    }
+
+    private void horizontalFrames (int size) {
+        // Draw the top & bottom frames.
         mOut.print("+");
         for (int i = 1; i <= size * 2; i++) {
             mOut.print("-");
